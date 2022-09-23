@@ -11,4 +11,7 @@ public interface AccountRepository extends JpaRepository<Account, Long>
 	
 	@Query("SELECT u from Account u JOIN FETCH u.roles where u.username = :username")
 	Account findByUsernameFetchRoles(@Param("username") String username);
+	
+	@Override
+	<S extends Account> S save(S entity);
 }
