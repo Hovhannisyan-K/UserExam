@@ -14,7 +14,7 @@ import javax.persistence.*;
 @NoArgsConstructor
 public class Exam extends BaseEntity
 {
-	private String score;
+	private int score;
 	private boolean isPassed;
 	@OneToOne
 	private Account account;

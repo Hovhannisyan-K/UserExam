@@ -6,13 +6,13 @@ import com.app.userexam.dto.AccountSignUpDto;
 import com.app.userexam.dto.RoleDto;
 import com.app.userexam.service.AccountService;
 import com.app.userexam.service.RoleService;
-import lombok.AllArgsConstructor;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin("app.front.url")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class AuthController
 {
 	private final AccountService accountService;
@@ -25,12 +25,15 @@ public class AuthController
 	}
 	
 	@PostMapping("/create")
-	public AccountResponseDto create(@RequestBody AccountSignUpDto account) {
+	public AccountResponseDto create(@RequestBody AccountSignUpDto account)
+	{
 		return accountService.createAccount(account);
 	}
 	
 	@PostMapping("/role")
-	public AccountResponseDto role(@RequestBody RoleDto roleDTO) {
+	public AccountResponseDto role(@RequestBody RoleDto roleDTO)
+	{
 		return roleService.createAccountRole(roleDTO);
 	}
+	
 }

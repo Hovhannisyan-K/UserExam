@@ -11,7 +11,7 @@ public class AccountMapper
 	public Account mapFromDto(AccountSignUpDto signUpDto)
 	{
 		return Account.builder()
-					  .accountName(signUpDto.getAccountName())
+					  .name(signUpDto.getAccountName())
 					  .roles(signUpDto.getRoles())
 					  .username(signUpDto.getUsername())
 					  .password(signUpDto.getPassword())
@@ -20,6 +20,6 @@ public class AccountMapper
 	
 	public AccountResponseDto mapFromAccount(Account account)
 	{
-		return AccountResponseDto.builder().accountName(account.getAccountName()).username(account.getUsername()).build();
+		return AccountResponseDto.builder().accountName(account.getName()).username(account.getUsername()).build();
 	}
 }

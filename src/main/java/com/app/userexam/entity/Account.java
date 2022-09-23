@@ -13,7 +13,7 @@ import java.util.List;
 @Builder
 public class Account extends BaseEntity
 {
-	private String accountName;
+	private String name;
 	private String username;
 	private String password;
 	@ManyToMany
