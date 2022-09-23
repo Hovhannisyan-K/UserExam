@@ -1,6 +1,6 @@
 package com.app.userexam.repository;
 
-import com.app.userexam.model.Account;
+import com.app.userexam.entity.Account;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

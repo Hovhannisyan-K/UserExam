@@ -14,7 +14,7 @@ public class BaseEntity
 {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    Long id;
+    public Long id;
 
     @Column(nullable = false)
     @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm")
