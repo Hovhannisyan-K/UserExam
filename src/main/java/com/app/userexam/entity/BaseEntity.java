@@ -1,4 +1,4 @@
-package com.app.userexam.model;
+package com.app.userexam.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Getter;

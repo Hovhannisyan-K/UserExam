@@ -1,4 +1,4 @@
-package com.app.userexam.model;
+package com.app.userexam.entity;
 
 import lombok.Getter;
 import lombok.Setter;
