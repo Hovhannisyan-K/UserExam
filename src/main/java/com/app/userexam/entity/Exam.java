@@ -16,4 +16,6 @@ public class Exam extends BaseEntity
 {
 	private String score;
 	private boolean isPassed;
+	@OneToOne
+	private Account account;
 }

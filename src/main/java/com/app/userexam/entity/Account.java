@@ -18,4 +18,7 @@ public class Account extends BaseEntity
 	private String password;
 	@ManyToMany
 	private List<Role> roles;
+	@OneToOne
+	private Exam exam;
+	
 }
