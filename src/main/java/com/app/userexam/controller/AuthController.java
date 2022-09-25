@@ -24,10 +24,10 @@ public class AuthController
 		return accountService.login(loginDto);
 	}
 	
-	@PostMapping("/create")
-	public AccountResponseDto create(@RequestBody AccountSignUpDto account)
+	@PostMapping("/register")
+	public AccountResponseDto register(@RequestBody AccountSignUpDto account)
 	{
-		return accountService.createAccount(account);
+		return accountService.register(account);
 	}
 	
 	@PostMapping("/role")

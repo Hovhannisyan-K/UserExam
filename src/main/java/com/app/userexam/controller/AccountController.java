@@ -1,5 +1,6 @@
 package com.app.userexam.controller;
 
+import com.app.userexam.dto.ExamRequestDto;
 import com.app.userexam.dto.ExamResponseDto;
 import com.app.userexam.service.ExamService;
 import lombok.RequiredArgsConstructor;
@@ -14,10 +15,10 @@ public class AccountController
 {
 	private final ExamService examService;
 	
-	@PreAuthorize("hasRole('user')")
+	@PreAuthorize("hasRole('USER')")
 	@GetMapping
-	public ExamResponseDto checkExamResult(@RequestBody String accountName)
+	public ExamResponseDto checkExamResult(@RequestBody ExamRequestDto examRequestDto)
 	{
-		return examService.validate(accountName);
+		return examService.validate(examRequestDto.getAccountName());
 	}
 }

@@ -35,13 +35,13 @@ public class SecurityConfig
 	public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 		JWTAuthenticationFilter jwtAuthenticationFilter = new JWTAuthenticationFilter(
 				authConfig.getAuthenticationManager());
-		jwtAuthenticationFilter.setFilterProcessesUrl("/api/login");
+		jwtAuthenticationFilter.setFilterProcessesUrl("/api/auth/login");
 		
 		http.csrf().disable().cors()
 			.and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 			.and()
-			.authorizeRequests().antMatchers("/api/login/**").permitAll()
+			.authorizeRequests().antMatchers("/api/auth/login/**","/api/auth/register").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.addFilter(jwtAuthenticationFilter)

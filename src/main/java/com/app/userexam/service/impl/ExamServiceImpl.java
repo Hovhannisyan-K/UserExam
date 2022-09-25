@@ -1,6 +1,7 @@
 package com.app.userexam.service.impl;
 
 import com.app.userexam.dto.ExamResponseDto;
+import com.app.userexam.entity.Account;
 import com.app.userexam.entity.Exam;
 import com.app.userexam.exceptions.ExamNotFoundException;
 import com.app.userexam.mapper.ExamMapper;
@@ -26,5 +27,11 @@ public class ExamServiceImpl implements ExamService
 		}
 		examByAccountName.setPassed(examByAccountName.getScore() > 5);
 		return examMapper.mapFromExam(examByAccountName);
+	}
+	
+	@Override
+	public void createExamForAccount(Account account)
+	{
+		examRepository.save(new Exam(7, true, account));
 	}
 }
