@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
         // this.snackBar.open(`Successfully registered as ${data.accountName}`)
         setTimeout(()=>{
           this.router.navigate(['/login']).then(() => window.location.reload())
-        }, 6000)
+        }, 2000)
       },
       err => {
         this.errorMessage = err.error.payload.message
