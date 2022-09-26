@@ -15,10 +15,10 @@ public class AccountController
 {
 	private final ExamService examService;
 	
-	@PreAuthorize("hasRole('USER')")
-	@GetMapping
+	@PreAuthorize("hasAnyRole('USER','ADMIN')")
+	@PostMapping
 	public ExamResponseDto checkExamResult(@RequestBody ExamRequestDto examRequestDto)
 	{
-		return examService.validate(examRequestDto.getAccountName());
+		return examService.validate(examRequestDto.getUsername());
 	}
 }

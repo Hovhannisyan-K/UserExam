@@ -18,9 +18,9 @@ public class ExamServiceImpl implements ExamService
 	private final ExamMapper examMapper;
 	
 	@Override
-	public ExamResponseDto validate(String accountName)
+	public ExamResponseDto validate(String username)
 	{
-		final Exam examByAccountName = examRepository.findExamByAccountName(accountName);
+		final Exam examByAccountName = examRepository.findExamByAccountUsername(username);
 		if (examByAccountName == null)
 		{
 			throw new ExamNotFoundException("Exam Not Found");

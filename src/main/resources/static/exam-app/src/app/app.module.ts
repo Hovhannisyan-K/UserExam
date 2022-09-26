@@ -1,22 +1,36 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginComponent } from './component/login/login.component';
-import { RegisterComponent } from './component/register/register.component';
+import {AppRoutingModule} from './app-routing.module';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+
+import {AppComponent} from './app.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {HomeComponent} from './home/home.component';
+import {BoardUserComponent} from './board-user/board-user.component';
+
+import {authInterceptorProviders} from './interceptor/auth.interceptor';
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    HomeComponent,
+    BoardUserComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+    MatSelectModule,
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

@@ -5,5 +5,5 @@ import lombok.Data;
 @Data
 public class ExamRequestDto
 {
-	private String accountName;
+	private String username;
 }
