@@ -1,0 +1,20 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  .exam{
+    color: #6a6aef;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .score{
+    font-size: 40px;
+  }
+  .score-text{
+    color: #a2a2a2;
+  }
+  .passed{
+    text-transform: uppercase;
+    color: #a2a2a2;
+  }
+}
+

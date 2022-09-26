@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.content = 'EXAM APP'
+    this.content = 'HOME'
   }
 
 }

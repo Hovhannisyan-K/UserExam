@@ -13,6 +13,7 @@ import {BoardUserComponent} from './board-user/board-user.component';
 
 import {authInterceptorProviders} from './interceptor/auth.interceptor';
 import {MatSelectModule} from "@angular/material/select";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import {MatSelectModule} from "@angular/material/select";
     FormsModule,
     HttpClientModule,
     MatSelectModule,
+    MatSnackBarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

@@ -5,11 +5,15 @@ import {ExamService} from "../service/exam.service";
 @Component({
   selector: 'app-board-user',
   templateUrl: './board-user.component.html',
-  styleUrls: ['./board-user.component.css']
+  styleUrls: ['./board-user.component.scss']
 })
 export class BoardUserComponent implements OnInit {
 
-  content: string;
+  content: {
+    accountName : string,
+    score : number,
+    passed : boolean
+  };
 
   constructor(private userService: UserService, private examService : ExamService) { }
 

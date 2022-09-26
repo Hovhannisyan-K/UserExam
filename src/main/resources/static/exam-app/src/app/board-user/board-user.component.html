@@ -1,5 +1,11 @@
 <div class="container">
   <header class="jumbotron">
-    <p>{{ content | json}}</p>
+    <h2>Welcome user: {{content.accountName}}</h2>
   </header>
+  <div class="results">
+    <p class="exam">Exam Result</p>
+    <p class="score-text">Your score is </p>
+    <p class="score">{{content.score}} out of 10</p>
+    <p class="passed">{{content.passed ? 'Passed' : 'Not Passed'}}</p>
+  </div>
 </div>
