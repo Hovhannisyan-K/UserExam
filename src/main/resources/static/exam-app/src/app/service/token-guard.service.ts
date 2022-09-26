@@ -11,11 +11,10 @@ export class TokenGuardService implements CanActivate {
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
     const token = sessionStorage.getItem('auth-user')
-    const data = JSON.parse(token);
-    if (data.token !== null) {
+    if (token !== null) {
       return true
     } else {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']).then(()=> window.location.reload())
     }
   }
 }

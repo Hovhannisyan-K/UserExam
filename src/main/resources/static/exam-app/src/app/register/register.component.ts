@@ -22,13 +22,13 @@ export class RegisterComponent implements OnInit {
   onSubmit(): void {
     this.authService.register(this.form).subscribe(
       data => {
+        console.log('reg response ', data)
         this.isSuccessful = true;
         this.isSignUpFailed = false;
-        this.router.navigate(['/login'])
+        this.router.navigate(['/login']).then(() => window.location.reload())
       },
       err => {
-        console.log('ERRR   ', err)
-        this.errorMessage = err.error.message;
+        this.errorMessage = err.error.payload.message
         this.isSignUpFailed = true;
       }
     );
