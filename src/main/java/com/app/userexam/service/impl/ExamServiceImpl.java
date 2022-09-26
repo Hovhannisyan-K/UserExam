@@ -10,6 +10,8 @@ import com.app.userexam.service.ExamService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.concurrent.ThreadLocalRandom;
+
 @Service
 @RequiredArgsConstructor
 public class ExamServiceImpl implements ExamService
@@ -32,6 +34,6 @@ public class ExamServiceImpl implements ExamService
 	@Override
 	public void createExamForAccount(Account account)
 	{
-		examRepository.save(new Exam(7, true, account));
+		examRepository.save(new Exam(ThreadLocalRandom.current().nextInt(0, 10 + 1), true, account));
 	}
 }
