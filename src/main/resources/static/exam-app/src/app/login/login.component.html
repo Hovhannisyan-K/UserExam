@@ -4,7 +4,7 @@
       id="profile-img"
       src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
       class="profile-img-card"
-    />
+     alt="no image"/>
     <h2 class="login-page">Login</h2>
     <form
       *ngIf="!isLoggedIn"
@@ -70,7 +70,7 @@
     </form>
 
     <div class="alert alert-success" *ngIf="isLoggedIn">
-      Logged in as DDDDD.
+      Logged in as {{form.username}}.
     </div>
   </div>
 </div>

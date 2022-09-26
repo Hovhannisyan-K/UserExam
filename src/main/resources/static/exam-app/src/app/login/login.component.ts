@@ -31,7 +31,9 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('username',this.form.username)
         this.isLoginFailed = false;
         this.isLoggedIn = true;
-        this.router.navigate(['/user']).then(()=> window.location.reload())
+        setTimeout(() =>{
+          this.router.navigate(['/user']).then(()=> window.location.reload())
+        }, 2200)
       },
       () => {
         this.errorMessage = 'wrong username or password';
